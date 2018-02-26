@@ -12,6 +12,26 @@ const portfinder = require('portfinder')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
+// 配置express
+const express = require('express')
+const fs = require('fs')
+const apiServer = express()
+const bodyParser = require('body-parser')
+apiServer.use(bodyParser.urlencoded({ extended: true }))
+apiServer.use(bodyParser.json())
+const apiRouter = express.Router()
+apiServer.use('/', apiRouter)
+
+apiRouter.get('/test', function(req, res) {
+})
+
+apiServer.listen('9999', (err) => {
+  if (err) {
+    console.log(err)
+    return
+  }
+  console.log('Listening at http://localhost:9999')
+})
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {

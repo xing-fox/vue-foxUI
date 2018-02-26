@@ -24,6 +24,9 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  externals: {
+    'BMap': 'BMap'
+  },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -41,6 +44,10 @@ module.exports = {
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
+      {
+        test: /\.less$/,
+        loader: 'style!css!less'
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
