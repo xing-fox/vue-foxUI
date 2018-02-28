@@ -32,11 +32,6 @@ export default {
     this.currentPoint()
   },
   methods: {
-    mapFunc () {
-      this.$router.push({
-        path: '/map'
-      })
-    },
     currentPoint () { // 获取当前位置
       let self = this
       let geolocation = new BMap.Geolocation()

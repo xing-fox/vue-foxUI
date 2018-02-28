@@ -15,6 +15,7 @@ ul {
     <ul>
       <li class='Fw-border-b' @click='mapFunc'>Map(百度地图基本api)</li>
       <li class='Fw-border-b'>图文消息走马灯</li>
+      <li class='Fw-border-b' @click='dragRefresh'>数据列表上滑下拉加载刷新</li>
     </ul>
   </div>
 </template>
@@ -29,6 +30,11 @@ export default {
     mapFunc () {
       this.$router.push({
         path: '/map'
+      })
+    },
+    dragRefresh () {
+      this.$router.push({
+        path: '/dragRefresh'
       })
     }
   }

@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/view/Index'
 
-const Fwmap = resolve => require(['@/components/Fw-map'], resolve)
+const map = resolve => require(['@/view/pages/map'], resolve)
+const dragRefresh = resolve => require(['@/view/pages/dragRefresh'], resolve)
 
 Vue.use(Router)
 
@@ -16,8 +17,13 @@ export default new Router({
     },
     {
       path: '/map',
-      name: 'Fwmap',
-      component: Fwmap
+      name: 'map',
+      component: map
+    },
+    {
+      path: '/dragRefresh',
+      name: 'dragRefresh',
+      component: dragRefresh
     }
   ]
 })

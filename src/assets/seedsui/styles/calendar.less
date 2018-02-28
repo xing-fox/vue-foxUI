@@ -1,0 +1,136 @@
+/*----------------------------calendar1.less(start)----------------------------*/
+@calendar1-weeks-color:@sub-color;
+@calendar1-arrow-color:@placeholder;
+@calendar1-current-color:@sub-color;
+@calendar1-active-color: white;
+@calendar1-notcurrent-color:@sub-color;
+@calendar1-disable-color:@placeholder;
+@calendar1-today-border:@border;
+.calendar1{
+	position: relative;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transition-property:height;
+	background-color:white;
+}
+/*头部*/
+.calendar1-header{
+	display: -webkit-box;
+	-webkit-box-align: center;
+	padding: @6px 0;
+}
+.calendar1-title{
+	-webkit-box-flex: 1.0;
+	text-align: center;
+	padding: @6px 0;
+}
+.calendar1-prev,.calendar1-next{
+	font-size:@16px;
+	width:15%;
+	height:@30px;
+    display:-webkit-box;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+
+	color:@calendar1-arrow-color;
+}
+/*周*/
+.calendar1-weeks{
+	color:@calendar1-weeks-color;
+	&:after{
+		content: '';
+		display:table;
+		clear:both;
+		zoom:1;
+	}
+}
+.calendar1-week{
+	height:@24px;
+	line-height:@24px;
+	font-size: @12px;
+	display: inline-block;
+    text-align: center;
+    float: left;
+    width: 14%;
+    &:nth-of-type(1),&:nth-last-of-type(1){
+		width: 15%;
+	}
+}
+
+/*主体*/
+.calendar1-wrapper{
+	height: @300px;
+	overflow:hidden;
+}
+.calendar1-wrapper-y{
+	height:@300px;
+    -webkit-transition-property:-webkit-transform;
+}
+.calendar1-wrapper-x{
+	width:300%;
+    -webkit-transition-property:-webkit-transform;
+}
+.calendar1-wrapper-x:after{
+	content: '';
+	display:table;
+	zoom:1;
+	clear:both;
+}
+.calendar1-month{
+	width:33%;
+	float:left;
+}
+.calendar1-monthrow:after{
+    content: '';
+    display: table;
+    zoom:1;
+    clear:both;
+}
+.calendar1-day{
+	display: inline-block;
+    /* height:@40px;
+    line-height: @40px;  */
+    text-align: center;
+    float: left;
+    width: 14%;
+}
+.calendar1-day:nth-of-type(1),.calendar1-day:nth-last-of-type(1){
+	width: 15%;
+}
+.calendar1-daynum{
+	display: -webkit-inline-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    width: 28px;
+    height: 28px;
+    line-height: normal;
+}
+.calendar1-today{
+    border-radius:100%;
+    border-width:@1px;
+    border-style:solid;
+    border-color:#ff9008;
+}
+.calendar1-current{
+    color:@calendar1-current-color;
+}
+.calendar1-notcurrent{
+    color:@calendar1-notcurrent-color;
+}
+.calendar1-active{
+	font-weight:600;
+	border-radius:100%;
+
+	color: @calendar1-active-color !important;
+	border-color:#ff9008;
+	background-color:#ff9008;
+}
+.calendar1-disable{
+	color:@calendar1-disable-color;
+}
+.calendar1-disable.calendar1-active{
+	font-weight:normal;
+	background-color:transparent;
+	border-color:transparent;
+}
+/*----------------------------calendar1.less(end)----------------------------*/
